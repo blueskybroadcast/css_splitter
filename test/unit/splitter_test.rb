@@ -70,6 +70,12 @@ EOD
 
   # --- split_string ---
 
+  def test_split_string_failure
+    second_part = CssSplitter::Splitter.split_string(File.read('test/dummy/app/assets/stylesheets/test_stylesheet_with_media_queries.css'), 2)
+    #second_part = CssSplitter::Splitter.split_string(File.read('test/dummy/app/assets/stylesheets/too_big_stylesheet.css.scss'), 2)
+    refute_empty second_part
+  end
+
   test '#split_string to get the second split' do
     assert_equal "@charset \"UTF-8\";\n#test { background-color: green ;}", CssSplitter::Splitter.split_string(File.read('test/dummy/app/assets/stylesheets/too_big_stylesheet.css.scss'), 2)
   end

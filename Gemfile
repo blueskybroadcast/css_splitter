@@ -5,8 +5,8 @@ source "http://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
-group :development do
-  gem "pry-debugger"
+group :development, :test do
+  gem "byebug"
 end
 gem "sass-rails"
 gem "jquery-rails"

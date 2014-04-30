@@ -16,7 +16,7 @@ module CssSplitter
               elsif scope.pathname.basename.to_s =~ /_split(\d+)\.css/; $1
               else 2
               end
-      CssSplitter::Splitter.split_string(data, split.to_i)
+      CssSplitter::Splitter.split_string data, split.to_i, CssSplitter.config.max_selectors
     end
   end
 
